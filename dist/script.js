@@ -95,26 +95,6 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-// (() => {
-//   const $ = function (selector) {
-//     const elements = document.querySelectorAll(selector);
-//     const obj = {};
-//     obj.hide = () => {
-//       elements.forEach((elem) => {
-//         elem.style.display = "none";
-//       });
-//       return obj;
-//     };
-//     obj.show = () => {
-//       elements.forEach((elem) => {
-//         elem.style.display = "";
-//       });
-//       return obj;
-//     };
-//     return obj;
-//   };
-//   window.$ = $;
-// })();
 const $ = function (selector) {
   return new $.prototype.init(selector);
 };
@@ -176,6 +156,18 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.show = function () {
   return this;
 };
 
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.hide = function () {
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].style) {
+      continue;
+    }
+
+    this[i].style.display = "none";
+  }
+
+  return this;
+};
+
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggle = function () {
   for (let i = 0; i < this.length; i++) {
     if (!this[i].style) {
@@ -205,7 +197,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggle = function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
-$("div").hide().show();
+$(".active").toggle().toggle();
 
 /***/ })
 
