@@ -4,7 +4,7 @@ const $ = function (selector) {
 
 $.prototype.init = function (selector) {
   if (!selector) {
-    return this; //{}
+    return this; // {}
   }
 
   if (selector.tagName) {
@@ -19,5 +19,7 @@ $.prototype.init = function (selector) {
 };
 
 $.prototype.init.prototype = $.prototype;
+
 window.$ = $;
+
 export default $;
